@@ -1,49 +1,64 @@
-<<<<<<< HEAD
-/target
-/classes
-/checkouts
-profiles.clj
-pom.xml
-pom.xml.asc
-*.jar
+# Created by https://www.gitignore.io/api/java,gradle
+
+# General
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Java ###
 *.class
-/.lein-*
-/.nrepl-port
-.hgignore
-.hg/
 
-.idea/
+# BlueJ files
+*.ctxt
 
-pyramid-curriculum-2.0.iml
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-*.iml
+# Package Files #
+*.jar
+*.war
+*.ear
 
-*.log
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
 
-resources/student-progress.txt
 
-resources/1337.txt
+### Gradle ###
+.gradle
+/build/
 
-javafx-sdk-11.0.2.*
+# Ignore Gradle GUI config
+gradle-app.setting
 
-resources/javafx-sdk-11.0.2/bin/
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
 
-resources/javafx-sdk-11.0.2/legal/javafx.base/
+# Cache of project
+.gradletasknamecache
 
-resources/javafx-sdk-11.0.2/legal/javafx.controls/
-
-resources/javafx-sdk-11.0.2/legal/javafx.fxml/
-
-resources/javafx-sdk-11.0.2/legal/javafx.graphics/
-
-resources/javafx-sdk-11.0.2/legal/javafx.media/
-
-resources/javafx-sdk-11.0.2/legal/javafx.swing/
-
-resources/javafx-sdk-11.0.2/legal/javafx.web/
-
-resources/javafx-sdk-11.0.2/lib/
-=======
 # Compiled source #
 ############
 *.com
@@ -95,4 +110,4 @@ settings.gradle
 ############
 .idea
 .idea/
->>>>>>> origin/main
+*.iml
