@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /target
 /classes
 /checkouts
@@ -42,3 +43,56 @@ resources/javafx-sdk-11.0.2/legal/javafx.swing/
 resources/javafx-sdk-11.0.2/legal/javafx.web/
 
 resources/javafx-sdk-11.0.2/lib/
+=======
+# Compiled source #
+############
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.bat
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+############
+*.log
+
+# OS generated files #
+############
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Java and Gradle #
+############
+build/
+.gradle/
+out/
+out
+.gradle
+gradle
+gradlew.bat
+gradlew
+settings.gradle
+
+# IntelliJ #
+############
+.idea
+.idea/
+>>>>>>> origin/main
