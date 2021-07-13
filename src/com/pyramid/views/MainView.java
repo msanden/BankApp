@@ -3,11 +3,12 @@ package com.pyramid.views;
 import com.pyramid.controllers.MainController;
 import com.pyramid.controllers.UserController;
 import com.pyramid.entities.User;
+import com.pyramid.utils.Utils;
 
 import java.util.Scanner;
 
 public class MainView {
-    private final Scanner scanner = new Scanner(System.in);
+
     private final MainController mainController = new MainController();
     private final UserController userController = new UserController();
     public static User currentUser = null;
@@ -16,9 +17,8 @@ public class MainView {
         System.out.println("Hello!");
     }
 
-    public void printUserMenu() {
-        System.out.println("1 - User Info");
-        System.out.println("2 - Exit to Main menu");
+    public int enterUserChoice() {
+        return Integer.parseInt(Utils.scanner.nextLine());
     }
 
     public void printMainMenu() {
@@ -31,9 +31,9 @@ public class MainView {
         String password;
 
         System.out.println("Please enter your login");
-        login = scanner.nextLine();
+        login = Utils.scanner.nextLine();
         System.out.println("Please enter your password");
-        password = scanner.nextLine();
+        password = Utils.scanner.nextLine();
 
         if (mainController.isAuthenticate(login, password)) {
             currentUser = userController.getUserByLoginAndPassword(login, password);

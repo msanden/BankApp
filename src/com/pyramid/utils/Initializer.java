@@ -3,7 +3,7 @@ package com.pyramid.utils;
 import com.pyramid.Storage;
 import com.pyramid.entities.User;
 
-public class InitManager {
+public class Initializer {
 
     public void init() {
         User user = new User("John", "Wick");

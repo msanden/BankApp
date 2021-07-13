@@ -1,26 +1,34 @@
 package com.pyramid;
 
-import com.pyramid.entities.User;
-import com.pyramid.utils.InitManager;
+import com.pyramid.utils.Initializer;
 import com.pyramid.views.MainView;
-
-import java.util.ArrayList;
+import com.pyramid.views.UserView;
 
 public class App {
     private static MainView mainView;
+    private static UserView userView;
 
     public static void main(String[] args) {
-        new InitManager().init();
-        ArrayList<User> users = Storage.getUsers();
+        new Initializer().init();
         mainView = new MainView();
+        userView = new UserView();
 
         mainView.printGreeting();
         mainView.printMainMenu();
         mainView.signIn();
 
-        if(MainView.currentUser != null) {
-            mainView.printUserMenu();
+        if (MainView.currentUser != null) {
+            userCycle();
         }
+
+
+    }
+
+    private static void userCycle() {
+        userView.printUserInfo(MainView.currentUser);
+        userView.printUserMenu();
+
+        userView.enterUserChoice();
 
     }
 }
