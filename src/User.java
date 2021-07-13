@@ -31,7 +31,7 @@ public class User {
         }
 
         /**generate userID for each user*/
-        this.userID = bank.getUserID();
+        this.userID = bank.getNewUserID();
         this.accounts = new ArrayList<Account>();
         System.out.printf("Welcome %s, %s with ID %s created.\n", lastName, firstName, this.userID);
     }
@@ -39,5 +39,9 @@ public class User {
     /** add an account to user's list of accounts */
     public void addAccount(Account account) {
         this.accounts.add(account);
+    }
+
+    public String getUserID() {
+        return this.userID;
     }
 }
