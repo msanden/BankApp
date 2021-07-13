@@ -1,8 +1,5 @@
 package main.java;
 
-import main.java.Account;
-import main.java.Bank;
-
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.security.MessageDigest;

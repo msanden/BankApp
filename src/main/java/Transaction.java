@@ -1,9 +1,6 @@
 package main.java;
-
-import main.java.Account;
-
 import java.util.Date;
-import java.util.Random;
+
 
 public class Transaction {
     /**
@@ -39,6 +36,7 @@ public class Transaction {
      */
     private String availableBalance;
 
+
     public Transaction(double amount, Account accountInProgess){
         this.amount = amount;
         this.accountInProgess = accountInProgess;
@@ -54,24 +52,6 @@ public class Transaction {
         this.message = message;
     }
 
-    public String generateUniqueTransactionNumber(){
-        String utn;
-        Random randomNumber = new Random();
-        int lengthOfTransNumber = 9;
-        do {
-            utn = "";
-            for(int character = 0; character < lengthOfTransNumber; character++){
-                utn += ((Integer) randomNumber.nextInt(10)).toString();
-            }
-            break;
-            //go through all transactions in the transactions arraylist and compare the id
-            //if it is equal then we have to keep making a new unique transaction number
-
-        } while(true);
-
-        return "";
-    }
-
     public String getLocation(){
         return this.location;
     }
@@ -79,4 +59,6 @@ public class Transaction {
     public String getAvailableBalance(){
         return this.availableBalance;
     }
+
+    public String getAccountNo(){  return this.accountNo; }
 }
