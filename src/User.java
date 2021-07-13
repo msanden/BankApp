@@ -35,4 +35,9 @@ public class User {
         this.accounts = new ArrayList<Account>();
         System.out.printf("Welcome %s, %s with ID %s created.\n", lastName, firstName, this.userID);
     }
+
+    /** add an account to user's list of accounts */
+    public void addAccount(Account account) {
+        this.accounts.add(account);
+    }
 }
