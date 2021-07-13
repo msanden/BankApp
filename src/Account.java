@@ -9,9 +9,13 @@ public class Account {
     public Account(String name, User accHolder, Bank bank) {
         this.name = name;
         this.accHolder = accHolder;
-        this.accountID = bank.getAccountID();
+        this.accountID = bank.generateAccountID();
         this.transactionHistory = new ArrayList<Transaction>();
         accHolder.addAccount(this);
         bank.addAccount(this);
+    }
+
+    public String getAccountID() {
+        return this.accountID;
     }
 }
