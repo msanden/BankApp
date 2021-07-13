@@ -24,19 +24,43 @@ public class Bank {
 
             // if generated string exists set flag to true, break to generate unique string
             isNotUnique = false;
-            for (User user : users) {
+            for (User user : this.users) {
                 if(userID.compareTo(user.getUserID()) == 0) {
                     isNotUnique = true;
                     break;
                 }
             }
         } while (isNotUnique);
+
         return userID.toString();
     }
 
     /** generate random account identifier and check it doesn't already exist in our bank's of accounts */
     public String generateAccountID(){
-        return accountID;
+        StringBuilder accountID;
+        Random random = new Random();
+        int len = 10;
+        boolean isNotUnique;
+
+        do {
+            accountID = new StringBuilder();
+
+            /** generate a string of length 7, made of integers in range 0-9 */
+            for (int i = 0; i < len; i++) {
+                accountID.append(((Integer) random.nextInt(10)).toString());
+            }
+
+            // if generated string exists set flag to true, break to generate unique string
+            isNotUnique = false;
+            for (Account account : this.accounts) {
+                if(accountID.compareTo(account.getAccountID()) == 0) {
+                    isNotUnique = true;
+                    break;
+                }
+            }
+        } while (isNotUnique);
+
+        return accountID.toString();
     }
 
     public void addAccount(Account account) {
