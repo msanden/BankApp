@@ -8,7 +8,7 @@ public class Bank {
     private ArrayList<Account> accounts;
 
     /** generate random user identifier and check it doesn't already exist in bank's list of users */
-    public String getUserID(){
+    public String generateUserID(){
         StringBuilder userID;
         Random random = new Random();
         int len = 7;
@@ -35,7 +35,7 @@ public class Bank {
     }
 
     /** generate random account identifier and check it doesn't already exist in our bank's of accounts */
-    public String getAccountID(){
+    public String generateAccountID(){
         return accountID;
     }
 
