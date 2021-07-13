@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Random;
 
 public class Transaction {
     /**
@@ -22,7 +23,7 @@ public class Transaction {
     private Account accountInProgess;
 
     /**
-     * The account number of the user for a single transaction
+     * The transaction number of the user for a single transaction
      */
     private String accountNo;
     /**
@@ -49,7 +50,21 @@ public class Transaction {
         this.message = message;
     }
 
-    public String generateUniqueAccountNumber(){
+    public String generateUniqueTransactionNumber(){
+        String utn;
+        Random randomNumber = new Random();
+        int lengthOfTransNumber = 9;
+        do {
+            utn = "";
+            for(int character = 0; character < lengthOfTransNumber; character++){
+                utn += ((Integer) randomNumber.nextInt(10)).toString();
+            }
+            break;
+            //go through all transactions in the transactions arraylist and compare the id
+            //if it is equal then we have to keep making a new unique transaction number
+
+        } while(true);
+
         return "";
     }
 
