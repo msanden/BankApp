@@ -9,17 +9,17 @@ public class Bank {
 
     /** generate random user identifier and check it doesn't already exist in bank's list of users */
     public String generateUserID(){
-        StringBuilder userID;
+        String userID;
         Random random = new Random();
         int len = 7;
         boolean isNotUnique;
 
         do {
-            userID = new StringBuilder();
+            userID = "";
 
             /** generate a string of length 7, made of integers in range 0-9 */
             for (int i = 0; i < len; i++) {
-                userID.append(((Integer) random.nextInt(10)).toString());
+                userID += ((Integer) random.nextInt(10)).toString();
             }
 
             // if generated string exists set flag to true, break to generate unique string
@@ -37,17 +37,18 @@ public class Bank {
 
     /** generate random account identifier and check it doesn't already exist in our bank's of accounts */
     public String generateAccountID(){
-        StringBuilder accountID;
+        String accountID;
         Random random = new Random();
         int len = 10;
         boolean isNotUnique;
 
         do {
-            accountID = new StringBuilder();
+            accountID = "";
 
             /** generate a string of length 7, made of integers in range 0-9 */
             for (int i = 0; i < len; i++) {
-                accountID.append(((Integer) random.nextInt(10)).toString());
+
+                accountID += ((Integer) random.nextInt(10)).toString();
             }
 
             // if generated string exists set flag to true, break to generate unique string
