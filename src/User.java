@@ -31,7 +31,7 @@ public class User {
         }
 
         /**generate userID for each user*/
-        this.userID = bank.getNewUserID();
+        this.userID = bank.generateUserID();
         this.accounts = new ArrayList<Account>();
         System.out.printf("Welcome %s, %s with ID %s created.\n", lastName, firstName, this.userID);
     }
