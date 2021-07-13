@@ -17,7 +17,9 @@ public class UserDAO {
     }
 
     public User getUserByLoginAndPassword(String login, String password) {
+        ArrayList<User> users = Storage.getUsers();
         for (User user : Storage.getUsers()) {
+
             if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 return user;
             }

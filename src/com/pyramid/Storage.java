@@ -9,8 +9,8 @@ public class Storage {
     private static ArrayList<User> users;
 
     public static ArrayList<User> getUsers() {
-        if(users == null) {
-            return new ArrayList<>();
+        if (users == null) {
+            users = new ArrayList<>();
         }
         return users;
     }

@@ -12,6 +12,10 @@ public class UserController {
         return userDAO.getUserById(id);
     }
 
+    public User getUserByLoginAndPassword(String login, String password) {
+        return userDAO.getUserByLoginAndPassword(login, password);
+    }
+
     public ArrayList<User> getUsers() {
         return userDAO.getUsers();
     }
