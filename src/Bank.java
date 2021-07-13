@@ -6,7 +6,5 @@ public class Bank {
     private ArrayList<User> users;
     private ArrayList<Account> accounts;
 
-    public String getUserID(){
-        return " ";
-    }
+
 }
