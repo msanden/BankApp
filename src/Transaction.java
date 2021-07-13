@@ -33,4 +33,31 @@ public class Transaction {
      * The current balance of the User
      */
     private String availableBalance;
+
+    public Transaction(double amount, Account accountInProgess){
+        this.amount = amount;
+        this.accountInProgess = accountInProgess;
+        this.timestamp = new Date();
+        this.message = "";
+    }
+
+    public Transaction(double amount, Account accountInProgess, String message){
+        //Call the two-arg constructor
+        this(amount, accountInProgess);
+
+        //
+        this.message = message;
+    }
+
+    public String generateUniqueAccountNumber(){
+        return "";
+    }
+
+    public String getLocation(){
+        return this.location;
+    }
+
+    public String getAvailableBalance(){
+        return this.availableBalance;
+    }
 }
