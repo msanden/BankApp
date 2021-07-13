@@ -16,7 +16,7 @@ public class User {
     private ArrayList<Account> accounts;
 
     /** creates a user with a specified name, pinNumber and their atm branch */
-    public User(String firstName, String lastName, String pinNumber, Bank atm) {
+    public User(String firstName, String lastName, String pinNumber, Bank bank) {
         this.firstName = firstName;
         this.lastName = lastName;
 
@@ -31,7 +31,7 @@ public class User {
         }
 
         /**generate userID for each user*/
-        this.userID = atm.getUserID();
+        this.userID = bank.getUserID();
         this.accounts = new ArrayList<Account>();
         System.out.printf("Welcome %s, %s with ID %s created.\n", lastName, firstName, this.userID);
     }
