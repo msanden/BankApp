@@ -8,7 +8,7 @@ public class User {
     private String login;
     private String password;
     private Role role;
-    private ArrayList<Account> accountasdasdasds;
+    private ArrayList<Account> account;
 
 
 
