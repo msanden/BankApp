@@ -1,3 +1,7 @@
+package main.java;
+
+import main.java.Account;
+
 import java.util.Date;
 import java.util.Random;
 
@@ -31,7 +35,7 @@ public class Transaction {
      */
     private String location;
     /**
-     * The current balance of the User
+     * The current balance of the main.java.User
      */
     private String availableBalance;
 
