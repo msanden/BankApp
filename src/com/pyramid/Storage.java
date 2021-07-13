@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class Storage {
 
-    private ArrayList<User> users;
+    private static ArrayList<User> users;
 
-    public ArrayList<User> getUsers() {
+    public static ArrayList<User> getUsers() {
+        if(users == null) {
+            return new ArrayList<>();
+        }
         return users;
     }
 
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
 }

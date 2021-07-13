@@ -6,11 +6,11 @@ import com.pyramid.entities.User;
 import java.util.ArrayList;
 
 public class UserDAO {
-    private Storage storage;
+    //private Storage storage = Storage;
 
-    public User getUserById(long Id) {
-        for (User user : storage.getUsers()) {
-            if (user.getId() == Id) {
+    public User getUserById(long id) {
+        for (User user : Storage.getUsers()) {
+            if (user.getId() == id) {
                 return user;
             }
         }
@@ -18,22 +18,22 @@ public class UserDAO {
     }
 
     public ArrayList<User> getUsers() {
-        return storage.getUsers();
+        return Storage.getUsers();
     }
 
     public void add(User user) {
-        storage.getUsers().add(user);
+        Storage.getUsers().add(user);
     }
 
-    public void delete(long Id) {
+    public void delete(long id) {
         int index = -1;
-        for (int i = 0; i < storage.getUsers().size(); i++) {
-            if (storage.getUsers().get(i).getId() == Id) {
+        for (int i = 0; i < Storage.getUsers().size(); i++) {
+            if (Storage.getUsers().get(i).getId() == id) {
                 index = i;
             }
         }
         if (index != -1) {
-            storage.getUsers().remove(index);
+            Storage.getUsers().remove(index);
         }
     }
 }

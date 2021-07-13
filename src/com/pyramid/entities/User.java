@@ -3,7 +3,7 @@ package com.pyramid.entities;
 import java.util.ArrayList;
 
 public class User {
-    private long Id;
+    private long id;
     private String firstName;
     private String lastName;
     private String login;
@@ -17,11 +17,11 @@ public class User {
     }
 
     public long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getFirstName() {

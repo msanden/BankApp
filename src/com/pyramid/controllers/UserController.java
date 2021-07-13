@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class UserController {
     private final UserDAO userDAO = new UserDAO();
 
-    public User getUserById(long Id) {
-        return userDAO.getUserById(Id);
+    public User getUserById(long id) {
+        return userDAO.getUserById(id);
     }
 
     public ArrayList<User> getUsers() {
@@ -20,7 +20,7 @@ public class UserController {
         userDAO.add(new User(firstName, lastName));
     }
 
-    public void delete(long Id) {
-        userDAO.delete(Id);
+    public void delete(long id) {
+        userDAO.delete(id);
     }
 }
