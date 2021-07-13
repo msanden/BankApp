@@ -6,11 +6,19 @@ import com.pyramid.entities.User;
 import java.util.ArrayList;
 
 public class UserDAO {
-    //private Storage storage = Storage;
 
     public User getUserById(long id) {
         for (User user : Storage.getUsers()) {
             if (user.getId() == id) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserByLoginAndPassword(String login, String password) {
+        for (User user : Storage.getUsers()) {
+            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 return user;
             }
         }
