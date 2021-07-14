@@ -1,12 +1,8 @@
 package main.java;
 
-import main.java.Account;
-import main.java.Bank;
-
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.security.MessageDigest;
-
 
 /**
  * main.java.User class representing a customer/client
@@ -82,7 +78,7 @@ public class User {
     }
 
     public void printAccountTransHistory(int accountkey) {
-        accounts.get(accountkey).printTransHistory();
+        accounts.get(accountkey).printTransactionHistory();
     }
 
     public double getAccountBalance(int accountkey) {

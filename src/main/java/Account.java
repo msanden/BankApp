@@ -3,12 +3,14 @@ package main.java;
 import java.util.ArrayList;
 
 public class Account {
+
     private String name;
     private String accountID;
     private User accHolder;
     private ArrayList<Transaction> transactionHistory;
 
     public Account(String name, User accHolder, Bank bank) {
+
         this.name = name;
         this.accHolder = accHolder;
         this.accountID = bank.generateAccountID();
@@ -21,9 +23,8 @@ public class Account {
         return this.accountID;
     }
 
-
-
     public String getSummaryLine(){
+
         double balance = this.getBalance();
 
         if(balance >= 0){
@@ -34,6 +35,7 @@ public class Account {
     }
 
     public double getBalance(){
+
         double balance = 0;
 
         for (Transaction transaction : this.transactionHistory){
@@ -43,6 +45,7 @@ public class Account {
     }
 
     public void printTransactionHistory(){
+
         System.out.printf("\nTransaction history for account %s\n", this.accountID);
         for (int t = this.transactionHistory.size() - 1; t >= 0; t--){
             System.out.println(this.transactionHistory.get(t).getSummaryLine());
@@ -51,6 +54,7 @@ public class Account {
     }
 
     public void addTransaction(double amount, String message){
+
         Transaction newTransaction = new Transaction(amount,this, message);
         this.transactionHistory.add(newTransaction);
     }
