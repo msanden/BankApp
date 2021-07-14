@@ -70,17 +70,30 @@ public class User {
     /**
      * account summary for this user */
     public void printAccountsSummary() {
-        System.out.printf("\n\n%s 's account summary", this.firstName);
+        System.out.printf("\n\n%s 's account summary\n", this.firstName);
         for(int i = 0; i < accounts.size(); i++) {
-            System.out.printf("%d) %s\n", i+1, accounts.get(i).getSummaryLine());
+            System.out.printf("  %d) %s\n", i+1, accounts.get(i).getSummaryLine());
         }
+        System.out.println();
     }
 
     public int numofAccounts() {
         return accounts.size();
     }
 
-    public void printAccountTransHistory(int accountNumber) {
-        accounts.get(accountNumber).printTransHistory();
+    public void printAccountTransHistory(int accountkey) {
+        accounts.get(accountkey).printTransHistory();
+    }
+
+    public double getAccountBalance(int accountkey) {
+        return accounts.get(accountkey).getBalance();
+    }
+
+    public String getAccountID(int accountkey) {
+        return accounts.get(accountkey).getAccountID();
+    }
+
+    public void addAccountTransaction(int accountkey, double amount, String memo) {
+        this.accounts.get(accountkey).addTransaction(amount, memo);
     }
 }
