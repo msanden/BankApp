@@ -9,6 +9,12 @@ public class Bank {
     private ArrayList<User> users;
     private ArrayList<Account> accounts;
 
+    public Bank(String name) {
+        this.name = name;
+        this.users = new ArrayList<User>();
+        this.accounts = new ArrayList<Account>();
+    }
+
     /** generate random user identifier and check it doesn't already exist in bank's list of users */
     public String generateUserID(){
         String userID;
