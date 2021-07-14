@@ -8,7 +8,7 @@ public class Bank {
     private String name;
     private ArrayList<User> users;
     private ArrayList<Account> accounts;
-    private ArrayList<Transaction> transactions;
+    //private ArrayList<Transaction> transactions;
 
     /** generate random user identifier and check it doesn't already exist in bank's list of users */
     public String generateUserID(){
@@ -66,8 +66,8 @@ public class Bank {
 
         return accountID.toString();
     }
-
-    /** generate random transaction number and check if it doesn't already exist in our bank's transactions */
+    /*
+    // generate random transaction number and check if it doesn't already exist in our bank's transactions
     public String generateUniqueTransactionNumber(){
         String utn;
         Random randomNumber = new Random();
@@ -92,7 +92,7 @@ public class Bank {
 
         return utn.toString();
 }
-
+*/
     public void addAccount(Account account) {
         this.accounts.add(account);
     }

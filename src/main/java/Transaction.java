@@ -27,14 +27,7 @@ public class Transaction {
      * The transaction number of the user for a single transaction
      */
     private String accountNo;
-    /**
-     * The location of the bank to print on the transaction slip
-     */
-    private String location;
-    /**
-     * The current balance of the main.java.User
-     */
-    private String availableBalance;
+
 
 
     public Transaction(double amount, Account accountInProgess){
@@ -52,13 +45,13 @@ public class Transaction {
         this.message = message;
     }
 
-    public String getLocation(){
-        return this.location;
-    }
+    //public String getLocation(){
+        //return this.location;
+   // }
 
-    public String getAvailableBalance(){
-        return this.availableBalance;
-    }
+    //public String getAvailableBalance(){
+        //return this.availableBalance;
+   // }
 
     public String getAccountNo(){  return this.accountNo; }
 }
