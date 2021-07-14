@@ -1,7 +1,5 @@
 package main.java;
 
-import main.java.Account;
-
 import java.util.Date;
 import java.util.Random;
 
@@ -24,7 +22,7 @@ public class Transaction {
     /**
      * The current account the transaction is being performed.
      */
-    private Account accountInProgess;
+    private Account account;
 
     /**
      * The transaction number of the user for a single transaction
@@ -39,44 +37,58 @@ public class Transaction {
      */
     private String availableBalance;
 
-    public Transaction(double amount, Account accountInProgess){
+    public Transaction(double amount, Account account) {
         this.amount = amount;
-        this.accountInProgess = accountInProgess;
+        this.account = account;
         this.timestamp = new Date();
         this.message = "";
     }
 
-    public Transaction(double amount, Account accountInProgess, String message){
+    public Transaction(double amount, Account account, String message) {
         //Call the two-arg constructor
-        this(amount, accountInProgess);
+        this(amount, account);
 
         //
         this.message = message;
     }
 
-    public String generateUniqueTransactionNumber(){
+    public String generateUniqueTransactionNumber() {
         String utn;
         Random randomNumber = new Random();
         int lengthOfTransNumber = 9;
         do {
             utn = "";
-            for(int character = 0; character < lengthOfTransNumber; character++){
+            for (int character = 0; character < lengthOfTransNumber; character++) {
                 utn += ((Integer) randomNumber.nextInt(10)).toString();
             }
             break;
             //go through all transactions in the transactions arraylist and compare the id
             //if it is equal then we have to keep making a new unique transaction number
 
-        } while(true);
+        } while (true);
 
         return "";
     }
 
-    public String getLocation(){
-        return this.location;
+    public String getLocation() {
+        return location;
     }
 
-    public String getAvailableBalance(){
-        return this.availableBalance;
+    public String getAvailableBalance() {
+        return availableBalance;
+    }
+
+    public String getSummaryLine() {
+        if (amount >= 0) {
+            return String.format("%s, $%.02f : %s",
+                    timestamp.toString(), amount, message);
+        } else {
+            return String.format("%s, $(%.02f) : %s",
+                    timestamp.toString(), -amount, message);
+        }
+    }
+
+    public double getAmount() {
+        return amount;
     }
 }
