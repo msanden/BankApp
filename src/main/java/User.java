@@ -34,7 +34,13 @@ public class User {
         /**generate userID for each user*/
         this.userID = bank.generateUserID();
         this.accounts = new ArrayList<Account>();
-        System.out.printf("Welcome %s, %s with ID %s created.\n", lastName, firstName, this.userID);
+
+        System.out.println();
+        System.out.printf(
+                "Welcome, %s! Your account with us has been created. " +
+                "Your account ID is %s" +
+                ".\n", firstName, this.userID
+        );
     }
 
     /** add an account to user's list of accounts */
