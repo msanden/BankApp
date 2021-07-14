@@ -75,4 +75,33 @@ public class Bank {
     public void addAccount(Account account) {
         this.accounts.add(account);
     }
+
+
+    public User addUser(String firstName, String lastName, String pin) {
+
+        //add user to bank's list of clients
+        User user = new User(firstName, lastName, pin, this);
+        this.users.add(user);
+
+        //create savings account for the user
+        Account account = new Account("Savings", user, this);
+        user.addAccount(account);
+        this.accounts.add(account);
+
+        return user;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public User userLogin(String userID, String pin) {
+        //return user with matching pin
+        for (User user : users) {
+            if(user.getUserID().compareTo(userID) == 0 && user.isPinValid(pin)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
