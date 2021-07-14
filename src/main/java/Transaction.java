@@ -1,9 +1,7 @@
 package main.java;
 
-import main.java.Account;
-
 import java.util.Date;
-import java.util.Random;
+
 
 public class Transaction {
     /**
@@ -30,14 +28,7 @@ public class Transaction {
      * The transaction number of the user for a single transaction
      */
     private String accountNo;
-    /**
-     * The location of the bank to print on the transaction slip
-     */
-    private String location;
-    /**
-     * The current balance of the main.java.User
-     */
-    private String availableBalance;
+
 
     public Transaction(double amount, Account accountInProgess){
         this.amount = amount;
@@ -54,29 +45,20 @@ public class Transaction {
         this.message = message;
     }
 
-    public String generateUniqueTransactionNumber(){
-        String utn;
-        Random randomNumber = new Random();
-        int lengthOfTransNumber = 9;
-        do {
-            utn = "";
-            for(int character = 0; character < lengthOfTransNumber; character++){
-                utn += ((Integer) randomNumber.nextInt(10)).toString();
-            }
-            break;
-            //go through all transactions in the transactions arraylist and compare the id
-            //if it is equal then we have to keep making a new unique transaction number
-
-        } while(true);
-
-        return "";
+    public double getAmount(){
+        return this.amount;
     }
 
-    public String getLocation(){
-        return this.location;
+    public String getSummaryLine(){
+        if(this.amount >= 0){
+            return String.format("%s : $%0.02f : %s",
+                    this.timestamp.toString(),
+                    this.amount, this.message);
+        } else {
+            return String.format("%s : $(%0.02f) : %s",
+                    this.timestamp.toString(),
+                    -this.amount, this.message);
+        }
     }
 
-    public String getAvailableBalance(){
-        return this.availableBalance;
-    }
 }
