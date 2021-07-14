@@ -5,13 +5,11 @@ import com.pyramid.controllers.UserController;
 import com.pyramid.entities.User;
 import com.pyramid.utils.Utils;
 
-import java.util.Scanner;
-
 public class MainView {
 
     private final MainController mainController = new MainController();
     private final UserController userController = new UserController();
-    public static User currentUser = null;
+    ///public static User currentUser = null;
 
     public void printGreeting() {
         System.out.println("Hello!");
@@ -26,7 +24,7 @@ public class MainView {
         System.out.println("2 - Exit");
     }
 
-    public void signIn() {
+    public User signIn() {
         String login;
         String password;
 
@@ -36,7 +34,9 @@ public class MainView {
         password = Utils.scanner.nextLine();
 
         if (mainController.isAuthenticate(login, password)) {
-            currentUser = userController.getUserByLoginAndPassword(login, password);
+            return userController.getUserByLoginAndPassword(login, password);
         }
+
+        return null;
     }
 }
