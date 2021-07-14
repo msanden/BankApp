@@ -96,7 +96,7 @@ public class App {
 
         do{
             System.out.printf("Enter the (1-%d) of the account\n" +
-                    "whose transactions you want to see: " +
+                    "whose transactions you want to see: ",
                     user.numofAccounts());
 
             currentAccount = scan.nextInt() - 1;
