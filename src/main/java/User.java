@@ -49,4 +49,38 @@ public class User {
     public String getUserID() {
         return this.userID;
     }
+
+    public boolean isPinValid(String pin) {
+
+        try {
+            MessageDigest validatePin = MessageDigest.getInstance("MD5");
+            return MessageDigest.isEqual(validatePin.digest(pin.getBytes()), this.pinNumber);
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println(" The cryptographic algorithm requested is not available in the environment");
+            e.printStackTrace();
+            System.exit(1);
+        }
+        return false;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    /**
+     * account summary for this user */
+    public void printAccountsSummary() {
+        System.out.printf("\n\n%s 's account summary", this.firstName);
+        for(int i = 0; i < accounts.size(); i++) {
+            System.out.printf("%d) %s\n", i+1, accounts.get(i).getSummaryLine());
+        }
+    }
+
+    public int numofAccounts() {
+        return accounts.size();
+    }
+
+    public void printAccountTransHistory(int accountNumber) {
+        accounts.get(accountNumber).printTransHistory();
+    }
 }
