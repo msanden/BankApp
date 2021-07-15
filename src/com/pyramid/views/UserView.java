@@ -14,7 +14,7 @@ public class UserView {
         System.out.println("First name = " + user.getFirstName());
         System.out.println("Last name = " + user.getLastName());
         for (Account account : accountController.getAccountsByUserId(user.getId())) {
-            System.out.println("Account type = " + account.getType());
+            System.out.println("Account type = " + account.getType() + " balance = " + account.getBalance());
         }
     }
 

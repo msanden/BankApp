@@ -26,4 +26,13 @@ public class Account {
     public void setTransactions(ArrayList<Transaction> transactions) {
         this.transactions = transactions;
     }
+
+    public double getBalance() {
+        double balance = 0;
+        for(Transaction transaction : transactions) {
+            balance = balance + transaction.getAmount();
+        }
+
+        return balance;
+    }
 }
