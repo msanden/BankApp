@@ -15,4 +15,12 @@ public class Storage {
         return users;
     }
 
+    public static long getNewId() {
+        ArrayList<User> users = getUsers();
+        if (users.size() > 0) {
+            return users.get(users.size() - 1).getId() + 1;
+        }
+        return 0;
+    }
+
 }

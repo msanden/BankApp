@@ -1,5 +1,7 @@
 package com.pyramid.entities;
 
+import com.pyramid.Storage;
+
 import java.util.ArrayList;
 
 public class User {
@@ -12,6 +14,7 @@ public class User {
     private ArrayList<Account> accounts;
 
     public User(String firstName, String lastName) {
+        id = Storage.getNewId();
         this.firstName = firstName;
         this.lastName = lastName;
         accounts = new ArrayList<>();

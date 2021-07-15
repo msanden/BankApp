@@ -1,14 +1,21 @@
 package com.pyramid.views;
 
+import com.pyramid.controllers.AccountController;
+import com.pyramid.controllers.UserController;
+import com.pyramid.entities.Account;
 import com.pyramid.entities.AccountType;
 import com.pyramid.entities.User;
-import com.pyramid.utils.Utils;
 
 public class UserView {
+    private final UserController userController = new UserController();
+    private final AccountController accountController = new AccountController();
 
     public void printUserInfo(User user) {
         System.out.println("First name = " + user.getFirstName());
         System.out.println("Last name = " + user.getLastName());
+        for (Account account : accountController.getAccountsByUserId(user.getId())) {
+            System.out.println("Account type = " + account.getType());
+        }
     }
 
     public void printUserAccountsMenu() {
