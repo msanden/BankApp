@@ -43,7 +43,5 @@ public class UserView {
         System.out.println("Transfer" + accountType);
     }
 
-    public int getUserChoice() {
-        return Integer.parseInt(Utils.scanner.nextLine());
-    }
+
 }

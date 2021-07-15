@@ -3,6 +3,7 @@ package com.pyramid;
 import com.pyramid.entities.AccountType;
 import com.pyramid.entities.User;
 import com.pyramid.utils.Initializer;
+import com.pyramid.utils.Utils;
 import com.pyramid.views.MainView;
 import com.pyramid.views.UserView;
 
@@ -38,7 +39,7 @@ public class App {
         do {
             userView.printUserInfo(currentUser);
             userView.printUserAccountsMenu();
-            userChoice = userView.getUserChoice();
+            userChoice = Utils.getUserChoice();
 
             switch (userChoice) {
                 case 1:
@@ -61,7 +62,7 @@ public class App {
         do {
             userView.printUserInfo(currentUser);
             userView.printUserAccountMenu();
-            userChoice = userView.getUserChoice();
+            userChoice = Utils.getUserChoice();
 
             switch (userChoice) {
                 case 1:
