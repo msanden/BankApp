@@ -3,22 +3,27 @@ package com.pyramid.entities;
 import java.util.ArrayList;
 
 public class Account {
-    private AccountType name;
-    private ArrayList<Transaction> transaction;
+    private AccountType type;
+    private ArrayList<Transaction> transactions;
 
-    public AccountType getName() {
-        return name;
+    public Account(AccountType type) {
+        this.type = type;
+        transactions = new ArrayList<>();
     }
 
-    public void setName(AccountType name) {
-        this.name = name;
+    public AccountType getType() {
+        return type;
     }
 
-    public ArrayList<Transaction> getTransaction() {
-        return transaction;
+    public void setType(AccountType type) {
+        this.type = type;
     }
 
-    public void setTransaction(ArrayList<Transaction> transaction) {
-        this.transaction = transaction;
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
     }
 }

@@ -66,7 +66,7 @@ public class App {
 
             switch (userChoice) {
                 case 1:
-                    userView.printAccountHistory(accountType);
+                    userView.printAccountTransactionHistory(accountType);
                     break;
                 case 2:
                     userView.printWithdrawMenu(accountType);

@@ -6,17 +6,11 @@ import com.pyramid.entities.User;
 import com.pyramid.utils.Utils;
 
 public class MainView {
-
     private final MainController mainController = new MainController();
     private final UserController userController = new UserController();
-    ///public static User currentUser = null;
 
     public void printGreeting() {
         System.out.println("Hello!");
-    }
-
-    public int enterUserChoice() {
-        return Integer.parseInt(Utils.scanner.nextLine());
     }
 
     public void printMainMenu() {

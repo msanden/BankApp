@@ -27,7 +27,7 @@ public class UserView {
         System.out.println("  5) Quit");
     }
 
-    public void printAccountHistory(AccountType accountType) {
+    public void printAccountTransactionHistory(AccountType accountType) {
         System.out.println("Account transaction history" + accountType);
     }
 

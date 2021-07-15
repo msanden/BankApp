@@ -9,11 +9,12 @@ public class User {
     private String login;
     private String password;
     private Role role;
-    private ArrayList<Account> account;
+    private ArrayList<Account> accounts;
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        accounts = new ArrayList<>();
     }
 
     public long getId() {
@@ -64,11 +65,11 @@ public class User {
         this.role = role;
     }
 
-    public ArrayList<Account> getAccount() {
-        return account;
+    public ArrayList<Account> getAccounts() {
+        return accounts;
     }
 
-    public void setAccount(ArrayList<Account> account) {
-        this.account = account;
+    public void setAccounts(ArrayList<Account> accounts) {
+        this.accounts = accounts;
     }
 }
