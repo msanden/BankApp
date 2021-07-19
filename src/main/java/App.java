@@ -84,6 +84,10 @@ public class App {
             case 4:
                 App.transferFunds(user, stdin);
                 break;
+            case 5:
+                stdin.nextLine();
+                break;
+                
         }
         //re-display menu unless user quits
         if (option != 5) {
